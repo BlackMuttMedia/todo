@@ -4,12 +4,12 @@ import "./App.css";
 
 class App extends Component {
   state = {};
-  async componentDidMount() {
-    const response = await axios.get("/api/v1/");
-    const { greeting } = response.data;
+  // async componentDidMount() {
+  //   const response = await axios.get("/api/v1/");
+  //   const { greeting } = response.data;
 
-    this.setState({ greeting });
-  }
+  //   this.setState({ greeting });
+  // }
 
   render() {
     const { greeting } = this.state;
