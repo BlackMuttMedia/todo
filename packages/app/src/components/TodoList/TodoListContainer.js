@@ -88,8 +88,6 @@ export default class extends Component {
             isComplete: value
           }
         );
-
-        debugger;
       }
 
       this.setState({
@@ -103,7 +101,6 @@ export default class extends Component {
   };
 
   addTodo = async title => {
-    debugger;
     try {
       const { skipApi } = this.props;
 
@@ -122,7 +119,6 @@ export default class extends Component {
           title: response.data.title,
           isComplete: response.data.isComplete
         });
-        debugger;
         this.setState({ items });
       }
     } catch (ex) {

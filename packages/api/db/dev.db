@@ -1,0 +1,4 @@
+{"id":"active","type":"list","title":"Todos","_id":"OfIdd48kSgvVX6LF"}
+{"id":"archive","type":"list","title":"Archive","_id":"csVgIqXTj6CgNWGd"}
+{"id":"cjgnym02k0000430zm5jb2j47","type":"todo","title":"one","createDate":{"$$date":1525196490716},"updateDate":{"$$date":1525196490716},"isComplete":false,"_id":"abxSubbNWuYiN8qd"}
+{"listId":"active","todoId":"cjgnym02k0000430zm5jb2j47","nextId":null,"type":"todoList","previousId":null,"_id":"FthwvS3c0g5a3xxm"}

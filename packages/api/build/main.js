@@ -1,4 +1,4 @@
-require('/Users/ryan/projects/javascript/todo/node_modules/source-map-support/register.js')
+require('source-map-support/register')
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
