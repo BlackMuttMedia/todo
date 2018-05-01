@@ -21,6 +21,15 @@ const Left = styled.div`
 
 const Right = styled.div`
   width: 90%;
+  position: relative;
+`;
+
+const RemoveLink = styled.a`
+  color: ${config.colors.error};
+  font-size: ${config.fontSizes.tiny};
+  position: absolute;
+  top: 10px;
+  right: 10px;
 `;
 
 const Text = styled.span`
@@ -31,7 +40,7 @@ const Checkbox = styled.input`
   zoom: 2;
 `;
 
-const TodoCard = ({ todoId, title, onChange, checked }) => (
+const TodoCard = ({ todoId, title, onChange, checked, onRemove }) => (
   <Wrapper checked={checked}>
     <Left>
       <Checkbox
@@ -41,6 +50,15 @@ const TodoCard = ({ todoId, title, onChange, checked }) => (
       />
     </Left>
     <Right>
+      <RemoveLink
+        href="#"
+        onClick={e => {
+          e.preventDefault();
+          onRemove(todoId);
+        }}
+      >
+        Remove
+      </RemoveLink>
       <Text>{title}</Text>
     </Right>
   </Wrapper>

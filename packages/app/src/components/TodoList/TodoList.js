@@ -26,6 +26,7 @@ export default class extends Component {
                 title={item.title}
                 onChange={actions.updateTodo}
                 checked={item.isComplete}
+                onRemove={actions.removeTodo}
               />
             )}
           </List>

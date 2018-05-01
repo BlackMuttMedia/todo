@@ -75,6 +75,20 @@ export default class extends Component {
     }
   }
 
+  removeTodo = async id => {
+    try {
+      const index = this.state.items.findIndex(i => i.todoId === id);
+      const items = [...this.state.items];
+      const [removed] = items.splice(index, 1);
+
+      const response = await axios.post(`${getApiRoute(routePaths.archive)}`, {
+        todoId: id
+      });
+
+      this.setState({ items });
+    } catch (ex) {}
+  };
+
   updateTodo = async (id, value) => {
     try {
       const { skipApi } = this.props;
@@ -156,12 +170,13 @@ export default class extends Component {
 
   render() {
     const { items } = this.state;
-    const { updateOrder, addTodo, updateTodo } = this;
+    const { updateOrder, addTodo, updateTodo, removeTodo } = this;
 
     const actions = {
       updateOrder,
       addTodo,
-      updateTodo
+      updateTodo,
+      removeTodo
     };
 
     return this.props.children(items, actions);
