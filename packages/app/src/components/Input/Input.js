@@ -30,13 +30,18 @@ const ErrorText = styled.small`
   font-family: sans-serif;
 `;
 
-const Input = ({ placeholder, errorText, onChange, value }) => (
+const Input = ({ placeholder, errorText, onChange, value, onSubmit }) => (
   <Wrapper>
     {errorText && <ErrorText>{errorText}</ErrorText>}
     <StyledInput
       type="text"
       value={value}
       placeholder={placeholder}
+      onKeyUp={e => {
+        if (e.keyCode === 13) {
+          onSubmit();
+        }
+      }}
       onChange={e => {
         onChange(e.target.value);
       }}

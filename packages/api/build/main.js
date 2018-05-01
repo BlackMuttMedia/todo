@@ -139,7 +139,6 @@ app.put(getApiRoute(routePaths.todo), async (req, res) => {
 app.post(getApiRoute(routePaths.reorder), async (req, res) => {
   const { todoId, previousId } = req.body;
 
-  console.log(todoId, previousId);
   const data = await service.reorder(todoId, previousId);
   return res.json(data);
 });

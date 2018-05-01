@@ -63,6 +63,7 @@ export default class extends Component {
             onChange={todoValue => {
               this.setState({ todoValue, errorText: null });
             }}
+            onSubmit={this.addTodo}
           />
         </Left>
         <Right>
