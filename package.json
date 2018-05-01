@@ -1,8 +1,11 @@
 {
   "private": true,
-  "workspaces": ["./packages/*"],
+  "workspaces": [
+    "./packages/*"
+  ],
   "scripts": {
-    "start": "node start.js"
+    "start": "node start.js",
+    "install": "cd packages/api && yarn install"
   },
   "devDependencies": {
     "shelljs": "^0.8.1"
