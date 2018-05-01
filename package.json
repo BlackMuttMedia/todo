@@ -1,4 +1,10 @@
 {
   "private": true,
-  "workspaces": ["./packages/*"]
+  "workspaces": ["./packages/*"],
+  "scripts": {
+    "start": "node start.js"
+  },
+  "devDependencies": {
+    "shelljs": "^0.8.1"
+  }
 }
