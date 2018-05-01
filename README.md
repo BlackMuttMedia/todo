@@ -22,6 +22,6 @@ The Frontend was created using create-react-app and utilizes some things like [S
 
 #### Backend
 
-The backend code is a standard express app but uses [Backpack] for some of the nice features it brings.
+The backend code is a standard express app but uses [Backpack](https://github.com/jaredpalmer/backpack) for some of the nice features it brings.
 
 To run the tests, navigate to `./packages/api` and run `yarn test`
