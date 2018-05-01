@@ -144,57 +144,6 @@ class TodoService {
     return await this.appendTail(todoId);
   };
 
-  reorder2 = async (todoId, previousId, listId = "active") => {
-    const previousRecord = previousId
-      ? await this.getTodoListItem(previousId)
-      : null;
-
-    const nextId = (previousRecord && previousRecord.nextId) || null;
-
-    const nextRecord =
-      previousId === null
-        ? await this.getFirstNode()
-        : await this.getTodoListItem(nextId);
-
-    // this is the only thing already so bail
-    if (!previousRecord && !nextRecord) {
-      return;
-    }
-
-    const newRecord = {
-      todoId: todoId,
-      nextId: nextRecord ? nextRecord.todoId : null,
-      previousId: previousRecord ? previousRecord.todoId : null
-    };
-
-    //update previous
-    const previousUpdated = previousRecord
-      ? await this.updateTodoListItem({
-          todoId: previousRecord.todoId,
-          options: { nextId: newRecord.todoId }
-        })
-      : null;
-
-    if (previousRecord) {
-      await this.updateTodoListItem({
-        todoId: previousRecord.todoId,
-        options: { nextId: newRecord.todoId }
-      });
-    }
-
-    if (nextRecord) {
-      await this.updateTodoListItem({
-        todoId: nextRecord.todoId,
-        options: { previousId: newRecord.todoId }
-      });
-    }
-
-    return await this.updateTodoListItem({
-      todoId,
-      options: newRecord
-    });
-  };
-
   reorder = async (todoId, previousId, listId = "active") => {
     const previousRecord = previousId
       ? await this.getTodoListItem(previousId)
